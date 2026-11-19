@@ -1,0 +1,32 @@
+[project]
+name = "godot-gymnasium"
+version = "0.1.0"
+description = "Train reinforcement-learning agents in Godot (C#) games from Python"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "gymnasium>=1.1",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+# godot_gymnasium.sb3, train.py and export.py: SB3 training and ONNX export
+sb3 = [
+    "onnx>=1.17",
+    "onnxruntime>=1.20",
+    "onnxscript>=0.6.1",
+    "stable-baselines3>=2.6",
+    "tensorboard>=2.18",
+    "torch>=2.8",
+    "tyro>=0.9.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# The Python package is in python/ (its .gdignore hides it from Godot); the C# files are at the root.
+module-root = "python"

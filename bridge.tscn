@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tqrlwe5hincb"]
+
+[ext_resource type="Script" uid="uid://4a3aifxu2pqf" path="res://addons/godot_gymnasium/GymBridge.cs" id="1"]
+
+[node name="GymBridge" type="Node" unique_id=768424578]
+script = ExtResource("1")
